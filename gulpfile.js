@@ -15,7 +15,7 @@ var assetspath =  'assets/';
 
 // Starts a BrowerSync instance
 gulp.task('server', ['build'], function(){
-    browser.init({server: './gh-pages', port: port});
+    browser.init({server: './docs', port: port});
 });
 
 // Watch files for changes
@@ -40,7 +40,7 @@ gulp.task('reset', function() {
 
 // Erases the dist folder
 gulp.task('clean', function() {
-    rimraf('gh-pages');
+    rimraf('docs');
 });
 
 // Copy Bulma filed into Bulma development folder
@@ -53,9 +53,9 @@ gulp.task('setupBulma', function() {
 // Copy static assets
 gulp.task('copy', function() {
     //Copy other external font and data assets
-    gulp.src(['assets/fonts/**/*']).pipe(gulp.dest('gh-pages/assets/fonts/'));
-    gulp.src([nodepath + 'slick-carousel/slick/fonts/**/*']).pipe(gulp.dest('gh-pages/assets/css/fonts/'));
-    gulp.src([nodepath + 'slick-carousel/slick/ajax-loader.gif']).pipe(gulp.dest('gh-pages/assets/css/'));
+    gulp.src(['assets/fonts/**/*']).pipe(gulp.dest('docs/assets/fonts/'));
+    gulp.src([nodepath + 'slick-carousel/slick/fonts/**/*']).pipe(gulp.dest('docs/assets/css/fonts/'));
+    gulp.src([nodepath + 'slick-carousel/slick/ajax-loader.gif']).pipe(gulp.dest('docs/assets/css/'));
 });
 
 //Theme Sass variables
@@ -96,7 +96,7 @@ gulp.task('compile-sass', function () {
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./gh-pages/assets/css/'));
+        .pipe(gulp.dest('./docs/assets/css/'));
 });
 
 // Compile Theme Scss
@@ -123,7 +123,7 @@ gulp.task('compile-scss', function () {
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./gh-pages/assets/css/'));
+        .pipe(gulp.dest('./docs/assets/css/'));
 });
 
 // Compile Html
@@ -136,7 +136,7 @@ gulp.task('compile-html', function() {
         helpers: 'html/helpers/',
         data: 'html/data/'
     }))
-        .pipe(gulp.dest('gh-pages'))
+        .pipe(gulp.dest('docs'))
         .on('finish', browser.reload);
 });
 
@@ -155,7 +155,7 @@ gulp.task('compile-css', function() {
         assetspath + 'css/icons.min.css',
     ])
         .pipe(concat('app.css'))
-        .pipe(gulp.dest('./gh-pages/assets/css/'));
+        .pipe(gulp.dest('./docs/assets/css/'));
 });
 
 // Compile js from node modules
@@ -174,19 +174,19 @@ gulp.task('compile-js', function() {
         assetspath + 'js/gmap/gmap.min.js',
     ])
         .pipe(concat('app.js'))
-        .pipe(gulp.dest('./gh-pages/assets/js/'));
+        .pipe(gulp.dest('./docs/assets/js/'));
 });
 
 //Copy Theme js to production site
 gulp.task('copy-js', function() {
     gulp.src('js/**/*.js')
-        .pipe(gulp.dest('./gh-pages/assets/js/'));
+        .pipe(gulp.dest('./docs/assets/js/'));
 });
 
 //Copy images to production site
 gulp.task('copy-images', function() {
     gulp.src('images/**/*')
-        .pipe(gulp.dest('./gh-pages/assets/images/'));
+        .pipe(gulp.dest('./docs/assets/images/'));
 });
 
 gulp.task('init', ['setupBulma']);
