@@ -31,13 +31,19 @@
         <div class="hero is-fullheight is-medium parallax is-cover is-relative">
         
             
+            <style>
+            .normal-pointer:hover{
+             cursor: default;
+            }
+            </style>
+            
             <nav class="navbar navbar-wrapper navbar-fade navbar-light is-transparent">
                 <div class="container">
                     <!-- Brand -->
                     <div class="navbar-brand">
                         <a class="navbar-item" href="/">
-                            <img class="light-logo" src="assets/images/logos/vp-logo-white.png" alt="">
-                            <img class="dark-logo" src="assets/images/logos/vp-logo-green.png" alt="">
+                            <img class="light-logo" src="assets/images/ds-logo.png" alt="">
+                            <img class="dark-logo" src="assets/images/ds-logo.png" alt="">
                         </a>
             
                         <!-- Sidebar Trigger --
@@ -74,17 +80,59 @@
                     <div class="navbar-menu">
                         <!-- Navbar Start -->
                         <div class="navbar-start">
-                            <!-- Navbar item -->
-                            <a class="navbar-item is-slide" href="#about">
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link normal-pointer" href="#">
                                     Our Services
-                            </a>
+                                </a>
+                                <div class="navbar-dropdown is-boxed is-medium">
+                                    <!-- Dropdown item -->
+                                    <a class="navbar-item is-menu" href="/agency/index.html">
+                                        <span>Data Strategy</span>
+                                    </a>
+                                    <!-- Dropdown item -->
+                                    <a class="navbar-item is-menu" href="/startup/index.html">
+                                        <span>AI & Data Science Strategy</span>
+                                    </a>
+                                    <!-- Dropdown item -->
+                                    <a class="navbar-item is-menu" href="/startup/index.html">
+                                        <span>AI Software Development</span>
+                                    </a>
+                                </div>
+                            </div>
                             <!-- Navbar item -->
-                            <a class="navbar-item is-slide" href="#portfolio">
-                                    Our Work
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                    <a class="navbar-link normal-pointer" href="#demos">
+                                        Our Expertise
+                                    </a>
+                                    <div class="navbar-dropdown is-boxed is-medium">
+                                        <!-- Dropdown item -->
+                                        <a class="navbar-item is-menu" href="/agency/index.html">
+                                            <span>Predictive Analytics</span>
+                                        </a>
+                                        <!-- Dropdown item -->
+                                        <a class="navbar-item is-menu" href="/startup/index.html">
+                                            <span>Computer Vision</span>
+                                        </a>
+                                        <!-- Dropdown item -->
+                                        <a class="navbar-item is-menu" href="/startup/index.html">
+                                            <span>Natural Language Processing</span>
+                                        </a>
+                                        <!-- Dropdown item -->
+                                        <a class="navbar-item is-menu" href="/startup/index.html">
+                                            <span>Machine Learning</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            <!-- Navbar item -->
+                            <a class="navbar-item is-slide" href="#team">
+                                Our Work
                             </a>
                             <!-- Navbar item -->
                             <a class="navbar-item is-slide" href="#team">
-                                Team
+                                About Us
+                            </a>
+                            <a class="navbar-item is-slide" href="#team">
+                                Join Us
                             </a>
                             
                             

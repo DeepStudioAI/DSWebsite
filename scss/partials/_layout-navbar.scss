@@ -147,9 +147,9 @@ transition: all 0.3s;
     .navbar-link {
         &:hover {
             background: transparent !important;
-            color: $secondary;
+            color: $muted-grey;
             &:after {
-                border-color: $secondary;
+                border-color: $muted-grey;
             }
         }
         &:after {
