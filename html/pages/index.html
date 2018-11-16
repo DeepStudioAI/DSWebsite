@@ -6,8 +6,24 @@ title: Home
 
 canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+
+
+    width: 600px;
+    text-align: center;
+    /* margin: 0 auto; */
+    /* top: auto; */
+    /* left: 0px; */
+    left: 0 auto;
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero {
+    background: #111;
 }
 </style>
 
@@ -668,8 +684,8 @@ canvas {
             
             minDist = 10,
             maxDist = 30,
-            initialWidth = 10,
-            maxLines = 100,
+            initialWidth = 5,
+            maxLines = 50,
             initialLines = 4,
             speed = 5,
             
@@ -706,7 +722,7 @@ canvas {
           for( var i = 0; i < initialLines; ++i )
             lines.push( new Line( starter ) );
           
-          ctx.fillStyle = '#222';
+          ctx.fillStyle = '#0e2a2a';
           ctx.fillRect( 0, 0, w, h );
           
           // if you want a cookie ;)
